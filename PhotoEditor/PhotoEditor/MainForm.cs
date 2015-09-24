@@ -19,7 +19,7 @@ namespace PhotoEditor
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+           // This is a test comment
         }
 
         private void locateOnDiskToolStripMenuItem_Click(object sender, EventArgs e)

@@ -1,2 +1,3 @@
 C:\Users\Justin\Documents\Harding University\GUI\PhotoEditor\PhotoEditor\bin\Debug\PhotoEditor.exe.config
 C:\Users\Justin\Documents\GitHub\PhotoEditor\PhotoEditor\PhotoEditor\bin\Debug\PhotoEditor.exe.config
+C:\Users\adamh_000\Documents\GitHub\PhotoEditor\PhotoEditor\PhotoEditor\PhotoEditor\bin\Debug\PhotoEditor.exe.config
