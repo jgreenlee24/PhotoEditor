@@ -15,15 +15,15 @@ Authors:
 5. Percentages:
 
 6. TODO's:
-	1.) Create Menu Strip with stubs for all clickable action under each menu (i.e. File > Locate on Disc, View > Details, etc.)
-	2.) Create 2 separate panels in Main Window (1 to hold Directory Treeview and the 2nd to hold the image thumbnails within current directory)
-	3.) Create Tree View for left panel in Main Window which will be used to display directories on user's machine and allow user to click to access images within that respective directory.
-	4.) Add Functionality for Current user's "Pictures" directory to open by default in Directory TreeView upon Program startup.
-	5.) Create ListView for right panel in Main Window which will be used to display image thumbnails for all images in the currently selected directory represented by the selecte node in the directory TreeView.
-	6.) Add Functionality for all images in the directory represented by the currently selected treeView node to be populated as thumbnail images in the Image Thumbnail ListView panel in Main Window
+DONE-JG	1.) Create Menu Strip with stubs for all clickable action under each menu (i.e. File > Locate on Disc, View > Details, etc.)
+DONE-JG	2.) Create 2 separate panels in Main Window (1 to hold Directory Treeview and the 2nd to hold the image thumbnails within current directory)
+DONE-JG	3.) Create Tree View for left panel in Main Window which will be used to display directories on user's machine and allow user to click to access images within that respective directory.
+DONE-JG	4.) Add Functionality for Current user's "Pictures" directory to open by default in Directory TreeView upon Program startup.
+DONE-JG	5.) Create ListView for right panel in Main Window which will be used to display image thumbnails for all images in the currently selected directory represented by the selecte node in the directory TreeView.
+DONE-JG	6.) Add Functionality for all images in the directory represented by the currently selected treeView node to be populated as thumbnail images in the Image Thumbnail ListView panel in Main Window
 	7.) Add an "indeterminate" progress bar that displays in the bottom-left of the Main Window while the image thumbnails are being loaded into the (Right) Image Thumbnail ListView panel for the currently selected directory.
 	8.) Make it to where the Main Window is still responsive while the image thumbnails are being loaded into the (Right) Image Preview/ListView panel.
-	9.) Add functionality for user to Click File > Select Root Folder to change the current Root Folder in the directory Tree View
+DONE-JG	9.) Add functionality for user to Click File > Select Root Folder to change the current Root Folder in the directory Tree View
 	10.) Add "Large" View Option so when user clicks View > Large, all of the images in the currently selected directory will be displayed in "Large" format.
 	11.) Add "Small" View Option so when user clicks View > Small, all of the images in the currently selected directory will be displayed in "Small" format.
 	12.) Add "Details" View Option so when user clicks View > Details, all of the images in the currently selected directory will be displayed in "Details" format.
@@ -41,6 +41,3 @@ Authors:
 	24.) Add functionality for user to press the "Save" button and the currently transformed image will OVERWRITE the old image in memory.
 	25.) Add functionality to where Alt-F4 or pressing the close button on the "Edit Photo" form will have the same result as if the user had pressed the "Cancel" button on the "Edit Photo" form.
 	26.) Add an icon for the application that will appear in the Windows task bar and all windows title bars for all forms.
-	
-7. Completed TODO'S:
-	#1 - JG

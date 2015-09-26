@@ -16,17 +16,17 @@ Authors:
 
 6. TODO's:
 	JUSTIN:
-	1.) Create Menu Strip.
-	2.) Create 2 separate panels in Main Window.
-	3.) Create Tree View for left panel in Main Window.
-	4.) Open "Pictures" directory by default.
-	5.) Create ListView for right panel in Main Window.
-	6.) Select folder in Tree View to display images at right panel.
+DONE	1.) Create Menu Strip.
+DONE	2.) Create 2 separate panels in Main Window.
+DONE	3.) Create Tree View for left panel in Main Window.
+DONE	4.) Open "Pictures" directory by default.
+DONE	5.) Create ListView for right panel in Main Window.
+DONE	6.) Select folder in Tree View to display images at right panel.
 	7.) Progress Bar.
 	8.) Seperate threads for UI and Loading files from Directory.
-	9.) Select Root Folder Menu Option.
+DONE	9.) Select Root Folder Menu Option.
 	10.) Views: "Small", "Medium", "Detail".
-	11.) "About" Dialog Box.
+	11.) "About" Dialog Box. "EXIT" closes Application.
 	12.) Double-click to Open Photo in "Edit Photo" Form
 
 	ADAM:
