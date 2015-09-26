@@ -21,8 +21,8 @@ DONE-JG	3.) Create Tree View for left panel in Main Window which will be used to
 DONE-JG	4.) Add Functionality for Current user's "Pictures" directory to open by default in Directory TreeView upon Program startup.
 DONE-JG	5.) Create ListView for right panel in Main Window which will be used to display image thumbnails for all images in the currently selected directory represented by the selecte node in the directory TreeView.
 DONE-JG	6.) Add Functionality for all images in the directory represented by the currently selected treeView node to be populated as thumbnail images in the Image Thumbnail ListView panel in Main Window
-	7.) Add an "indeterminate" progress bar that displays in the bottom-left of the Main Window while the image thumbnails are being loaded into the (Right) Image Thumbnail ListView panel for the currently selected directory.
-	8.) Make it to where the Main Window is still responsive while the image thumbnails are being loaded into the (Right) Image Preview/ListView panel.
+DONE-JG	7.) Add an "indeterminate" progress bar that displays in the bottom-left of the Main Window while the image thumbnails are being loaded into the (Right) Image Thumbnail ListView panel for the currently selected directory.
+DONE-JG	8.) Make it to where the Main Window is still responsive while the image thumbnails are being loaded into the (Right) Image Preview/ListView panel.
 DONE-JG	9.) Add functionality for user to Click File > Select Root Folder to change the current Root Folder in the directory Tree View
 	10.) Add "Large" View Option so when user clicks View > Large, all of the images in the currently selected directory will be displayed in "Large" format.
 	11.) Add "Small" View Option so when user clicks View > Small, all of the images in the currently selected directory will be displayed in "Small" format.

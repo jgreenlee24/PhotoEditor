@@ -9,12 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// Authors: Justin Greenlee & Adam Hammond
+// Date: September 26th, 2015
+// Class: GUI
+// Assignment: Photo Editor
+
 namespace PhotoEditor
 {
     public partial class MainForm : Form
     {
         // private variables
         private string rootDirectory;
+        private string currentPath;
         private FolderBrowserDialog folderBrowserDialog1;
 
         // constructor
@@ -34,35 +40,28 @@ namespace PhotoEditor
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             listView1.Clear();
-            // TODO: display progress bar while loop occurs
 
             // append selected path to current path
-            string path = rootDirectory;
+            string path = currentPath = rootDirectory;
             if (e.Node.Level != 0)
             {
                 string nodePath = e.Node.FullPath;
                 int i = nodePath.IndexOf("\\");
                 path += nodePath.Substring(i, nodePath.Length - i);
+                currentPath = path;
             }
 
             // initialize directory and image list
-            var directory = new DirectoryInfo(path);
-            ImageList images = new ImageList();
-            images.ImageSize = new Size(32, 32);
             listView1.View = View.LargeIcon;
-            listView1.LargeImageList = images;
-
-            // Load Images for Selected Directory (in a separate thread)
-            int index = 0;
-            foreach (var file in directory.GetFiles())
+            if (!backgroundWorker1.IsBusy)
+                backgroundWorker1.RunWorkerAsync();
+            else
             {
-                if (file.Extension == ".jpg")
+                if (backgroundWorker1.WorkerSupportsCancellation)
                 {
-                    images.Images.Add(file.Name, Image.FromFile(file.FullName));
-                    listView1.Items.Add(new ListViewItem(file.Name, index));
-                    index++;
-                }    
-            }   
+                    backgroundWorker1.CancelAsync(); // cancels and restart for new selection
+                }
+            }
         }
         #endregion
         #region Directory Functions
@@ -100,6 +99,87 @@ namespace PhotoEditor
         private void locateOnDiskToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+        #endregion
+        #region Background Worker Event Handling
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            if (progressBar1.Value != progressBar1.Maximum)
+                progressBar1.Value++;
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Cancelled)
+            {
+                listView1.Clear(); // clear and restart for new selection
+                if (!backgroundWorker1.IsBusy)
+                    backgroundWorker1.RunWorkerAsync();
+            }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            ImageList images = new ImageList();
+            images.ImageSize = new Size(32, 32);
+            var directory = new DirectoryInfo(currentPath);
+            SetImageList(images);
+
+            // Initialize Progress Bar, Count JPG Images in Directory
+            int imageCount = 0;
+            foreach (var file in directory.GetFiles())
+            {
+                if (file.Extension == ".jpg") imageCount++;
+            }
+            InitializeProgressBar(imageCount);
+
+
+            // Loop through files in currently selected directory
+            int index = 0;
+            foreach (var file in directory.GetFiles())
+            {
+                if (worker.CancellationPending)
+                {
+                    e.Cancel = true;
+                    break;
+                }
+                if (file.Extension == ".jpg")
+                {
+                    images.Images.Add(file.Name, Image.FromFile(file.FullName));
+                    AppendItemToListView(new ListViewItem(file.Name, index));
+                    worker.ReportProgress(1);
+                    index++;
+                }
+            }
+        }
+
+        #endregion
+        #region Delegate Methods (UI stuff)
+        private void AppendItemToListView(ListViewItem item)
+        {
+            if (InvokeRequired)
+                Invoke(new MethodInvoker(() => AppendItemToListView(item)));
+            else
+                listView1.Items.Add(item);
+        }
+        public void SetImageList(ImageList images)
+        {
+            if (InvokeRequired)
+                Invoke(new MethodInvoker(() => SetImageList(images)));
+            else
+                listView1.LargeImageList = images;
+        }
+        public void InitializeProgressBar(int max)
+        {
+            if (InvokeRequired)
+                Invoke(new MethodInvoker(() => InitializeProgressBar(max)));
+            else
+            {
+                progressBar1.Minimum = 0;
+                progressBar1.Maximum = max;
+                progressBar1.Visible = true;
+            }
         }
         #endregion
     }

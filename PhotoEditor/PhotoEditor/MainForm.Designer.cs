@@ -42,6 +42,8 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -153,25 +155,41 @@
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(12, 0);
+            this.treeView1.Location = new System.Drawing.Point(12, 3);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(207, 611);
+            this.treeView1.Size = new System.Drawing.Size(207, 608);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(4, 0);
+            this.listView1.Location = new System.Drawing.Point(4, 3);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(424, 611);
+            this.listView1.Size = new System.Drawing.Size(424, 608);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(230, 12);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(424, 15);
+            this.progressBar1.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(666, 656);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -205,6 +223,8 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ListView listView1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
