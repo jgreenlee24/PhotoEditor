@@ -10,3 +10,4 @@ C:\Users\Justin\Documents\GitHub\PhotoEditor\PhotoEditor\PhotoEditor\obj\Debug\P
 C:\Users\Justin\Documents\GitHub\PhotoEditor\PhotoEditor\PhotoEditor\obj\Debug\PhotoEditor.csproj.GenerateResource.Cache
 C:\Users\Justin\Documents\GitHub\PhotoEditor\PhotoEditor\PhotoEditor\obj\Debug\PhotoEditor.exe
 C:\Users\Justin\Documents\GitHub\PhotoEditor\PhotoEditor\PhotoEditor\obj\Debug\PhotoEditor.pdb
+C:\Users\Justin\Documents\GitHub\PhotoEditor\PhotoEditor\PhotoEditor\obj\Debug\PhotoEditor.AboutForm.resources

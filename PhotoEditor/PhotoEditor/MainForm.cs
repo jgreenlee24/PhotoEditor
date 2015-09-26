@@ -22,12 +22,16 @@ namespace PhotoEditor
         private string rootDirectory;
         private string currentPath;
         private FolderBrowserDialog folderBrowserDialog1;
+        private OpenFileDialog openFileDialog1;
+        private AboutForm aboutForm1;
 
-        // constructor
+        #region Constructor & Load
         public MainForm()
         {
             InitializeComponent();
             folderBrowserDialog1 = new FolderBrowserDialog();
+            openFileDialog1 = new OpenFileDialog();
+            aboutForm1 = new AboutForm();
         }
 
         // main form load event
@@ -36,6 +40,7 @@ namespace PhotoEditor
             rootDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
             ListDirectory(this.treeView1, rootDirectory);
         }
+        #endregion
         #region View Event Handlers
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
@@ -98,7 +103,39 @@ namespace PhotoEditor
         }
         private void locateOnDiskToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            openFileDialog1.InitialDirectory = folderBrowserDialog1.SelectedPath;
+            openFileDialog1.FileName = null;
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                // Open Photo Editor for the selected file
+            }
+        }
 
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void detailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void smallToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void largeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Show the FolderBrowserDialog.
+            DialogResult result = aboutForm1.ShowDialog();
         }
         #endregion
         #region Background Worker Event Handling
@@ -133,7 +170,6 @@ namespace PhotoEditor
                 if (file.Extension == ".jpg") imageCount++;
             }
             InitializeProgressBar(imageCount);
-
 
             // Loop through files in currently selected directory
             int index = 0;
@@ -182,5 +218,6 @@ namespace PhotoEditor
             }
         }
         #endregion
+
     }
 }
