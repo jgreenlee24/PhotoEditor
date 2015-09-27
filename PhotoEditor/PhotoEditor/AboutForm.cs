@@ -12,9 +12,12 @@ namespace PhotoEditor
 {
     public partial class AboutForm : Form
     {
-        public AboutForm()
+        private MainForm _mainForm;
+
+        public AboutForm(MainForm mainForm)
         {
             InitializeComponent();
+            _mainForm = mainForm;
         }
 
         private void label1_Click(object sender, EventArgs e)
