@@ -11,3 +11,10 @@ C:\Users\Justin\Documents\GitHub\PhotoEditor\PhotoEditor\PhotoEditor\obj\Debug\P
 C:\Users\Justin\Documents\GitHub\PhotoEditor\PhotoEditor\PhotoEditor\obj\Debug\PhotoEditor.exe
 C:\Users\Justin\Documents\GitHub\PhotoEditor\PhotoEditor\PhotoEditor\obj\Debug\PhotoEditor.pdb
 C:\Users\Justin\Documents\GitHub\PhotoEditor\PhotoEditor\PhotoEditor\obj\Debug\PhotoEditor.AboutForm.resources
+C:\Users\adamh_000\Documents\GitHub\PhotoEditor\PhotoEditor\PhotoEditor\bin\Debug\PhotoEditor.exe.config
+C:\Users\adamh_000\Documents\GitHub\PhotoEditor\PhotoEditor\PhotoEditor\obj\Debug\PhotoEditor.csprojResolveAssemblyReference.cache
+C:\Users\adamh_000\Documents\GitHub\PhotoEditor\PhotoEditor\PhotoEditor\obj\Debug\PhotoEditor.AboutForm.resources
+C:\Users\adamh_000\Documents\GitHub\PhotoEditor\PhotoEditor\PhotoEditor\obj\Debug\PhotoEditor.EditForm.resources
+C:\Users\adamh_000\Documents\GitHub\PhotoEditor\PhotoEditor\PhotoEditor\obj\Debug\PhotoEditor.MainForm.resources
+C:\Users\adamh_000\Documents\GitHub\PhotoEditor\PhotoEditor\PhotoEditor\obj\Debug\PhotoEditor.Properties.Resources.resources
+C:\Users\adamh_000\Documents\GitHub\PhotoEditor\PhotoEditor\PhotoEditor\obj\Debug\PhotoEditor.csproj.GenerateResource.Cache
