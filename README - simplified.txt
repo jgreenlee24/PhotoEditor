@@ -25,8 +25,8 @@ DONE	6.) Select folder in Tree View to display images at right panel.
 DONE	7.) Progress Bar.
 DONE	8.) Seperate threads for UI and Loading files from Directory.
 DONE	9.) Select Root Folder Menu Option.
-	10.) Views: "Small", "Medium", "Detail".
-	11.) "About" Dialog Box. "EXIT" closes Application.
+DONE	10.) Views: "Small", "Medium", "Detail".
+DONE	11.) "About" Dialog Box. "EXIT" closes Application.
 	12.) Double-click to Open Photo in "Edit Photo" Form
 
 	ADAM:

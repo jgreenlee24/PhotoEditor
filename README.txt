@@ -24,10 +24,10 @@ DONE-JG	6.) Add Functionality for all images in the directory represented by the
 DONE-JG	7.) Add an "indeterminate" progress bar that displays in the bottom-left of the Main Window while the image thumbnails are being loaded into the (Right) Image Thumbnail ListView panel for the currently selected directory.
 DONE-JG	8.) Make it to where the Main Window is still responsive while the image thumbnails are being loaded into the (Right) Image Preview/ListView panel.
 DONE-JG	9.) Add functionality for user to Click File > Select Root Folder to change the current Root Folder in the directory Tree View
-	10.) Add "Large" View Option so when user clicks View > Large, all of the images in the currently selected directory will be displayed in "Large" format.
-	11.) Add "Small" View Option so when user clicks View > Small, all of the images in the currently selected directory will be displayed in "Small" format.
-	12.) Add "Details" View Option so when user clicks View > Details, all of the images in the currently selected directory will be displayed in "Details" format.
-	13.) Create an "About" Dialog Box Which will open when the user clicks Help > About
+DONE-JG	10.) Add "Large" View Option so when user clicks View > Large, all of the images in the currently selected directory will be displayed in "Large" format.
+DONE-JG	11.) Add "Small" View Option so when user clicks View > Small, all of the images in the currently selected directory will be displayed in "Small" format.
+DONE-JG	12.) Add "Details" View Option so when user clicks View > Details, all of the images in the currently selected directory will be displayed in "Details" format.
+DONE-JG	13.) Create an "About" Dialog Box Which will open when the user clicks Help > About
 	14.) Create "Edit Photo" Form with button stubs which will be used by the user to actually edit the photos
 	15.) Add functionality for user to double-click an image thumbnail in the image thumbnail ListView panel, and automatically open the "Edit Photo" form with the double-clicked image as the active image in the "Edit Photo" form.
 	16.) Add functionality for user to edit the image brightness in the "Edit Photo" form.

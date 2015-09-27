@@ -60,7 +60,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(666, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(955, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -154,23 +154,23 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.listView1);
-            this.splitContainer1.Size = new System.Drawing.Size(666, 623);
-            this.splitContainer1.SplitterDistance = 222;
+            this.splitContainer1.Size = new System.Drawing.Size(955, 623);
+            this.splitContainer1.SplitterDistance = 318;
             this.splitContainer1.TabIndex = 1;
             // 
             // treeView1
             // 
             this.treeView1.Location = new System.Drawing.Point(12, 3);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(207, 608);
+            this.treeView1.Size = new System.Drawing.Size(303, 608);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(4, 3);
+            this.listView1.Location = new System.Drawing.Point(3, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(424, 608);
+            this.listView1.Size = new System.Drawing.Size(627, 608);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -184,16 +184,16 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(230, 12);
+            this.progressBar1.Location = new System.Drawing.Point(325, 12);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(424, 15);
+            this.progressBar1.Size = new System.Drawing.Size(627, 15);
             this.progressBar1.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 656);
+            this.ClientSize = new System.Drawing.Size(955, 656);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);

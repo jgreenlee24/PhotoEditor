@@ -24,6 +24,8 @@ namespace PhotoEditor
         private FolderBrowserDialog folderBrowserDialog1;
         private OpenFileDialog openFileDialog1;
         private AboutForm aboutForm1;
+        private ImageList images;
+        private bool detailsView = false;
 
         #region Constructor & Load
         public MainForm()
@@ -32,6 +34,8 @@ namespace PhotoEditor
             folderBrowserDialog1 = new FolderBrowserDialog();
             openFileDialog1 = new OpenFileDialog();
             aboutForm1 = new AboutForm();
+            images = new ImageList();
+            images.ImageSize = new Size(32, 32);
         }
 
         // main form load event
@@ -41,7 +45,7 @@ namespace PhotoEditor
             ListDirectory(this.treeView1, rootDirectory);
         }
         #endregion
-        #region View Event Handlers
+        #region TreeView Event Handlers
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             listView1.Clear();
@@ -119,22 +123,50 @@ namespace PhotoEditor
 
         private void detailToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            detailsView = true;
+            listView1.Clear();
+            listView1.View = View.Details;
+            listView1.Columns.Add("Name", 100);
+            listView1.Columns.Add("Date", 150);
+            listView1.Columns.Add("Size", 100);
+            listView1.Dock = DockStyle.Fill;
+            images.ImageSize = new Size(32, 32);
+            listView1.SmallImageList = images;
 
+            if (!backgroundWorker1.IsBusy)
+                backgroundWorker1.RunWorkerAsync();
+            else backgroundWorker1.CancelAsync();
         }
 
         private void smallToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            detailsView = false;
+            listView1.Clear();
+            listView1.View = View.SmallIcon;
+            images.ImageSize = new Size(32, 32);
+            listView1.SmallImageList = images;
 
+            if (!backgroundWorker1.IsBusy)
+                backgroundWorker1.RunWorkerAsync();
+            else backgroundWorker1.CancelAsync();
         }
 
         private void largeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            detailsView = false;
+            listView1.Clear();
+            listView1.View = View.LargeIcon;
+            images.ImageSize = new Size(64, 64);
+            listView1.LargeImageList = images;
 
+            if (!backgroundWorker1.IsBusy)
+                backgroundWorker1.RunWorkerAsync();
+            else backgroundWorker1.CancelAsync();
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Show the FolderBrowserDialog.
+            // Show the AboutForm.
             DialogResult result = aboutForm1.ShowDialog();
         }
         #endregion
@@ -158,8 +190,6 @@ namespace PhotoEditor
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
-            ImageList images = new ImageList();
-            images.ImageSize = new Size(32, 32);
             var directory = new DirectoryInfo(currentPath);
             SetImageList(images);
 
@@ -183,7 +213,18 @@ namespace PhotoEditor
                 if (file.Extension == ".jpg")
                 {
                     images.Images.Add(file.Name, Image.FromFile(file.FullName));
-                    AppendItemToListView(new ListViewItem(file.Name, index));
+                    if (!detailsView)
+                    {
+                        var item = new ListViewItem(file.Name, index);
+                        AppendItemToListView(item);
+                    } else
+                    {
+                        var details = new string[]  { file.Name,
+                                                      file.LastWriteTime.ToString(),
+                                                      file.Length.ToString() };
+                        var item = new ListViewItem(details, index);
+                        AppendItemToListView(item);
+                    }
                     worker.ReportProgress(1);
                     index++;
                 }
@@ -204,7 +245,11 @@ namespace PhotoEditor
             if (InvokeRequired)
                 Invoke(new MethodInvoker(() => SetImageList(images)));
             else
+            {
+                images.Images.Clear();
+                listView1.SmallImageList = images;
                 listView1.LargeImageList = images;
+            }    
         }
         public void InitializeProgressBar(int max)
         {
